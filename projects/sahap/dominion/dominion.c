@@ -669,7 +669,7 @@ int handleAdventurerCardEffect(int drawnTreasure, struct gameState *state, int c
     drawCard(currentPlayer, state);
     cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer] - 1];  // top card of hand is most recently drawn card.
 
-    if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
+    if (cardDrawn == copper || cardDrawn == gold)
       drawnTreasure++;
     else
     {
@@ -692,7 +692,7 @@ int handleCouncilRoomCardEffect(int currentPlayer, struct gameState *state, int 
   int i;
 
   // +4 Cards
-  for (i = 0; i < 4; i++)
+  for (i = 0; i < 3; i++)
 	{
 	  drawCard(currentPlayer, state);
 	}
@@ -786,7 +786,7 @@ int handleFeastCardEffect(struct gameState *state, int currentPlayer, int tempHa
   }
 
   // Reset Hand
-  for (i = 0; i <= state->handCount[currentPlayer]; i++)
+  for (i = 0; i <= state->handCount[currentPlayer] - 1; i++)
   {
     state->hand[currentPlayer][i] = tempHand[i];
     tempHand[i] = -1;
