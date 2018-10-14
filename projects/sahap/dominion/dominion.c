@@ -647,7 +647,7 @@ int handleSmithyCardEffect(int currentPlayer, struct gameState *state, int handP
 {
   int i;
   //+3 Cards
-  for (i = 0; i < 3; i++)
+  for (i = 0; i < 2; i++)
 	{
 	  drawCard(currentPlayer, state);
 	}
